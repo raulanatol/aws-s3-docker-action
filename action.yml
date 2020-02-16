@@ -1,57 +1,53 @@
-name: "AWS S3 sync"
-description: "Synchronize S3 bucket files"
+name: AWS S3 sync
+description: Synchronize S3 bucket files
+author: raulanatol
 
 inputs:
   AWS_ACCESS_KEY_ID:
-    description: "AWS ACCESS KEY"
+    description: AWS ACCESS KEY
     required: true
-    default: ""
 
   AWS_SECRET_ACCESS_KEY:
-    description: "AWS SECRET KEY"
+    description: AWS SECRET KEY
     required: true
-    default: ""
 
   AWS_REGION:
-    description: "AWS REGION"
+    description: AWS REGION
     required: true
-    default: "us-west-2"
+    default: us-west-2
 
   AWS_BUCKET_NAME:
-    description: "Name of the bucket"
+    description: Name of the bucket
     required: true
-    default: ""
 
   SOURCE:
-    description: "Source of copying"
+    description: Source of copying
     required: true
-    default: "."
 
   TARGET:
-    description: "Target in the AWS S3"
+    description: Target in the AWS S3
     required: true
-    default: ""
 
   WITH_DELETE:
-    description: "If defined the s3 sync is executed with the --delete flag"
+    description: If defined the s3 sync is executed with the --delete flag
     required: false
 
   WITH_CLOUD_FRONT_INVALIDATION:
-    description: "If defined a cloudfront invalidation will be executed"
+    description: If defined a cloudfront invalidation will be executed
     required: false
 
   AWS_CLOUDFRONT_DISTRIBUTION_ID:
-    description: "Id of the cloudfront distribution"
+    description: Id of the cloudfront distribution
     required: false
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: docker
+  image: Dockerfile
   args:
     - ${{ inputs.AWS_ACCESS_KEY_ID }}
     - ${{ inputs.AWS_SECRET_ACCESS_KEY }}
     - ${{ inputs.AWS_REGION }}
-    - ${{ inputs.BUCKET_NAME }}
+    - ${{ inputs.AWS_BUCKET_NAME }}
     - ${{ inputs.SOURCE }}
     - ${{ inputs.TARGET }}
     - ${{ inputs.WITH_DELETE }}
