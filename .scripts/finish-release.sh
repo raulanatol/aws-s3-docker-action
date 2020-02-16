@@ -49,7 +49,7 @@ function gitPush() {
 }
 
 function generate_release_notes() {
-  npx gren release --username=raulantol --repo=aws-s3-docker-action
+  npx gren release --username=raulanatol --repo=aws-s3-docker-action
 }
 
 git_pull
