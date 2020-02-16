@@ -29,13 +29,13 @@ function git_pull() {
 }
 
 function is_duplicated_tag() {
-  if git rev-parse ${NEW_VERSION} >/dev/null 2>&1; then
+  if git rev-parse v${NEW_VERSION} >/dev/null 2>&1; then
     error "Duplicated tag"
   fi
 }
 
 function change_version() {
-  git tag ${NEW_VERSION}
+  git tag v${NEW_VERSION}
 }
 
 function uncommitted_changes() {
