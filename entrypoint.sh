@@ -30,7 +30,7 @@ fi
 
 aws s3 sync ${SOURCE} s3://${AWS_BUCKET_NAME}/${TARGET} ${FLAGS}
 
-if [ -z "${WITH_CLOUD_FRONT_INVALIDATION}" ]; then
+if [ -n "${WITH_CLOUD_FRONT_INVALIDATION}" ]; then
   if [ -z "${AWS_CLOUDFRONT_DISTRIBUTION_ID}" ]; then
     echo "Impossible to request an invalidation we need the AWS_CLOUDFRONT_DISTRIBUTION_ID value"
     exit 1
