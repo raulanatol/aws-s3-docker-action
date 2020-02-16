@@ -10,7 +10,7 @@ function error() {
 }
 
 if [ $# != 1 ]; then
-  error "Please specify the version number: npm run finish-release 10.0.1"
+  error "Please specify the version number: sh .scripts/finish-release.sh 10.0"
 fi
 
 NEW_VERSION=$1
@@ -29,13 +29,13 @@ function git_pull() {
 }
 
 function is_duplicated_tag() {
-  if git rev-parse v${NEW_VERSION} >/dev/null 2>&1; then
+  if git rev-parse ${NEW_VERSION} >/dev/null 2>&1; then
     error "Duplicated tag"
   fi
 }
 
 function change_version() {
-  git tag v${NEW_VERSION}
+  git tag ${NEW_VERSION}
 }
 
 function uncommitted_changes() {
