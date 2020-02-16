@@ -57,6 +57,5 @@ uncommitted_changes
 check_branch
 is_duplicated_tag
 change_version
-publish
 gitPush
 generate_release_notes
