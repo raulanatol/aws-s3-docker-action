@@ -1,4 +1,4 @@
-name: AWS S3 sync
+name: AWS S3 bucket synchronization
 description: Synchronize S3 bucket files
 author: raulanatol
 
