@@ -22,7 +22,7 @@ Create the file `workflow.yml` in `.github/workflows` folder.
 
 ```
 name: S3 Sync
-on ['push']
+on [push]
 
 jobs:
   deploy:
@@ -36,7 +36,7 @@ jobs:
           AWS_ACCESS_KEY_ID:
           AWS_SECRET_ACCESS_KEY:
           AWS_REGION: 
-          BUCKET_NAME: 
+          AWS_BUCKET_NAME: 
           SOURCE: 
           TARGET: 
           WITH_DELETE: 

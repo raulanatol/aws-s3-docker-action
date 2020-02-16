@@ -1,15 +1,11 @@
 FROM alpine:3.11.3
 
 ENV AWSCLI_VERSION "1.18.0"
+ENV PYTHONUNBUFFERED=1
 
-RUN apk add --update \
-    python \
-    python-dev \
-    py-pip \
-    build-base \
-    && pip install awscli==${AWSCLI_VERSION} --quiet --no-cache-dir --upgrade --user \
-    && apk --purge -v del py-pip \
-    && rm -rf /var/cache/apk/*
+RUN apk add --no-cache python3 && \
+    if [ ! -e /usr/bin/python ]; then ln -sf python3 /usr/bin/python ; fi && \
+    pip3 install --no-cache --upgrade pip setuptools wheel awscli==${AWSCLI_VERSION}
 
 COPY entrypoint.sh /entrypoint.sh
 
