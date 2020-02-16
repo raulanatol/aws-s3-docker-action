@@ -1,7 +1,9 @@
 name: AWS S3 bucket synchronization
 description: Synchronize S3 bucket files
 author: raulanatol
-
+branding:
+  color: green
+  icon: upload-cloud
 inputs:
   AWS_ACCESS_KEY_ID:
     description: AWS ACCESS KEY
