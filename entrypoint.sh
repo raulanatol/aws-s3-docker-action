@@ -20,8 +20,14 @@ fi
 echo "Starting..."
 
 mkdir -p ~/.aws
-echo -e "[default]\naws_access_key_id=${AWS_ACCESS_KEY_ID}\naws_secret_access_key=${AWS_SECRET_ACCESS_KEY}" >~/.aws/credentials
-echo -e "[default]\nregion=${AWS_REGION}\noutput=json" >~/.aws/config
+echo -e "[default]\naws_access_key_id=${AWS_ACCESS_KEY_ID}\naws_secret_access_key=${AWS_SECRET_ACCESS_KEY}" > ~/.aws/credentials
+echo -e "[default]\nregion=${AWS_REGION}\noutput=json" > ~/.aws/config
+
+echo "TEST"
+cat ~/.aws/credentials
+echo "--"
+cat ~/.aws/config
+echo "--2"
 
 FLAGS=""
 if [ -z "${WITH_DELETE}" ]; then
