@@ -35,7 +35,7 @@ if [ -n "${WITH_CLOUD_FRONT_INVALIDATION}" ]; then
     echo "Impossible to request an invalidation we need the AWS_CLOUDFRONT_DISTRIBUTION_ID value"
     exit 1
   else
-    aws cloudfront create-invalidation --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION_ID} --paths "${TARGET}"
+    aws cloudfront create-invalidation --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION_ID} --paths "${AWS_CLOUDFRONT_INVALIDATION_PATH}"
   fi
 fi
 

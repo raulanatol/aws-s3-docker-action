@@ -42,6 +42,10 @@ inputs:
     description: Id of the cloudfront distribution
     required: false
 
+  AWS_CLOUDFRONT_INVALIDATION_PATH:
+    description: Path for the cloudfront invalidation
+    required: false
+
 runs:
   using: docker
   image: Dockerfile
@@ -55,3 +59,4 @@ runs:
     - ${{ inputs.WITH_DELETE }}
     - ${{ inputs.WITH_CLOUD_FRONT_INVALIDATION }}
     - ${{ inputs.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
+    - ${{ inputs.AWS_CLOUDFRONT_INVALIDATION_PATH }}

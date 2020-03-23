@@ -15,6 +15,7 @@ This actions using the [AWS-CLI](https://docs.aws.amazon.com/cli/latest/userguid
 | `WITH_DELETE` | If you want to use the [*--delete* flag](https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html#synopsis) | | | 
 | `WITH_CLOUDFRONT_INVALIDATION` | If you want to use cloudfront invalidation | | |
 | `AWS_CLOUDFRONT_DISTRIBUTION_ID` | The cloudfront distributions id (use only if you need invalidation) | | **SECRET** |  
+| `AWS_CLOUDFRONT_INVALIDATION_PATH` | Path to the cloudfront invalidation (use only if you need invalidation) | | |  
 
 ## Example usage
 
@@ -42,4 +43,5 @@ jobs:
           WITH_DELETE: 
           WITH_CLOUD_FRONT_INVALIDATION: 
           AWS_CLOUDFRONT_DISTRIBUTION_ID: 
+          AWS_CLOUDFRONT_INVALIDATION_PATH:
 ```
