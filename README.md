@@ -13,6 +13,7 @@ This actions using the [AWS-CLI](https://docs.aws.amazon.com/cli/latest/userguid
 | `SOURCE` | Your local file path that you wish to upload to S3 | **TRUE** | |
 | `TARGET` | The destination of the source after sync in S3 | **TRUE** | |
 | `WITH_DELETE` | If you want to use the [*--delete* flag](https://docs.aws.amazon.com/cli/latest/reference/s3/sync.html#synopsis) | | | 
+| `EXCLUDE` | If you want to exclude files or folders from the sync use the [*--exclude* flag](https://docs.aws.amazon.com/cli/latest/reference/s3/index.html#use-of-exclude-and-include-filters) | | |
 | `WITH_CLOUDFRONT_INVALIDATION` | If you want to use cloudfront invalidation | | |
 | `AWS_CLOUDFRONT_DISTRIBUTION_ID` | The cloudfront distributions id (use only if you need invalidation) | | **SECRET** |  
 | `AWS_CLOUDFRONT_INVALIDATION_PATH` | Path to the cloudfront invalidation (use only if you need invalidation) | | |  
@@ -39,7 +40,8 @@ jobs:
           AWS_REGION: 
           AWS_BUCKET_NAME: 
           SOURCE: 
-          TARGET: 
+          TARGET:
+          EXCLUDE:
           WITH_DELETE: 
           WITH_CLOUD_FRONT_INVALIDATION: 
           AWS_CLOUDFRONT_DISTRIBUTION_ID: 

@@ -33,6 +33,10 @@ inputs:
   WITH_DELETE:
     description: If defined the s3 sync is executed with the --delete flag
     required: false
+  
+  EXCLUDE:
+    description: If defined the s3 sync is executed with the --exclude flag
+    required: false
 
   WITH_CLOUD_FRONT_INVALIDATION:
     description: If defined a cloudfront invalidation will be executed
@@ -57,6 +61,7 @@ runs:
     - ${{ inputs.SOURCE }}
     - ${{ inputs.TARGET }}
     - ${{ inputs.WITH_DELETE }}
+    - ${{ inputs.EXCLUDE }}
     - ${{ inputs.WITH_CLOUD_FRONT_INVALIDATION }}
     - ${{ inputs.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
     - ${{ inputs.AWS_CLOUDFRONT_INVALIDATION_PATH }}
