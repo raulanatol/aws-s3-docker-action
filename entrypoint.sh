@@ -28,6 +28,11 @@ if [ -z "${WITH_DELETE}" ]; then
   FLAGS="${FLAGS} --delete"
 fi
 
+if [ -n "${EXCLUDE}" ]; then
+  FLAGS="${FLAGS} --exclude ${EXCLUDE}"
+fi
+
+echo "aws s3 sync ${SOURCE} s3://${AWS_BUCKET_NAME}/${TARGET} ${FLAGS}"
 aws s3 sync ${SOURCE} s3://${AWS_BUCKET_NAME}/${TARGET} ${FLAGS}
 
 if [ -n "${WITH_CLOUD_FRONT_INVALIDATION}" ]; then
